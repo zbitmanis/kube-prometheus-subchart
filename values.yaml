@@ -1,0 +1,22 @@
+kube-prometheus-stack:
+  build:
+    enabled: false
+  deploy:
+     prometheus:
+      prometheusSpec:
+       storageSpec:
+         volumeClaimTemplate:
+           spec:
+             storageClassName: gp2
+             resources:
+              requests:
+                storage: 10Gi
+     alertmanager:
+      storage:
+       volumeClaimTemplate:
+         spec:
+           storageClassName: gp2
+           resources:
+            requests:
+              storage: 10Gi
+  

@@ -1,0 +1,8 @@
+kube-prometheus-stack:
+  build:
+    enabled: false
+  deploy:
+    prometheus:
+      prometheusSpec:
+        externalLabels: 
+          cluster: "clustername"
